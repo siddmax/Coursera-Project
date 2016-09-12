@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CPCourse.h"
 
 @interface CPCourseDetailViewController : UIViewController
+
+
+@property (weak, nonatomic) IBOutlet UILabel *courseTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *courseImage;
+@property (weak, nonatomic) IBOutlet UITextView *courseDescription;
+@property (strong, nonatomic) CPCourse *course;
 
 @end

@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, CPCourseType) {
 @property (nonatomic, assign) CPCourseType type;
 @property (nonatomic, strong) NSString *courseID;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *detail;
 @property (nonatomic, assign) BOOL multipleSchools;
 @property (nonatomic, strong) NSString *university;
 @property (nonatomic, assign) NSInteger courseCount;

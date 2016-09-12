@@ -11,9 +11,11 @@
 #import "CPSearchTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "AFHTTPSessionManager.h"
+#import "CPCourseDetailViewController.h"
 
 static NSInteger amountPerPage = 50;
 static NSString *detailSegue = @"detailSegue";
+static NSString *kSearchTableDidDownloadImage = @"DownloadImageNofitication";
 
 @interface CPSearchViewController ()
 
@@ -97,6 +99,21 @@ static NSString *detailSegue = @"detailSegue";
     startIndex = 0;
 }
 
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:detailSegue]) {
+        //get photo from selected cell
+        CPSearchTableViewCell *cell = sender;
+        long index = [self.tableView indexPathForCell:cell].row;
+        CPCourse *course = self.courseArray[index];
+        
+        //populate detail photo with image
+        CPCourseDetailViewController *vc = [segue destinationViewController];
+        vc.course = course;
+    }
+}
+
 #pragma mark - Search Bar Delegate Methods
 
 //search in keyboard pressed
@@ -164,7 +181,7 @@ static NSString *detailSegue = @"detailSegue";
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         [self displayOkAlertViewWithTitle:@"Network Error"
-                                      message:@"There was an error in downloading data from the server."];
+                                  message:@"There was an error in downloading data from the server."];
     }];
 }
 
@@ -177,8 +194,16 @@ static NSString *detailSegue = @"detailSegue";
     
     //parse elements array to create course objects, store in temp dict to access in linked
     NSArray *elements = result[@"elements"];
+    NSLog(@"%@", result);
     NSDictionary *entries = elements[0];
     NSArray *courseArray = entries[@"entries"];
+    
+    if (courseArray.count == 0) {
+        [self displayOkAlertViewWithTitle:@"Invalid Search"
+                                  message:@"Can't find any courses for this search. Try another search."];
+        return;
+    }
+    
     for (NSDictionary *entryDict in courseArray) {
         CPCourse *course = [CPCourse new];
         
@@ -203,38 +228,6 @@ static NSString *detailSegue = @"detailSegue";
         [partnerIDDict setObject:partnerDict[@"name"] forKey:partnerDict[@"id"]];
     }
     
-    //parse linked array to populate course objects, store in mutable courses array for table view data and reload
-    NSArray *coursesV1Array = linked[@"courses.v1"];
-    for (NSDictionary *courseDict in coursesV1Array) {
-        CPCourse *course = courseIDDict[courseDict[@"id"]];
-        
-        if (course == nil) {
-            continue;
-        }
-        
-        //course name
-        course.name = courseDict[@"name"];
-        
-        //image url
-        course.imageURL = courseDict[@"photoUrl"];
-        [self downloadImage:course.imageURL key:course.courseID];
-        
-        //uni name, handle multiple uni
-        NSArray *partnerArray = courseDict[@"partnerIds"];
-        for (NSString *partnerID in partnerArray) {
-            NSString *uniName = [partnerIDDict objectForKey:partnerID];
-            if (course.university.length > 0) {
-                course.university = [NSString stringWithFormat:@"%@, %@",course.university,uniName];
-            } else {
-                course.university = uniName;
-            }
-
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    }
-    
     NSArray *specializationV1Array = linked[@"onDemandSpecializations.v1"];
     for (NSDictionary *specDict in specializationV1Array) {
         CPCourse *course = courseIDDict[specDict[@"id"]];
@@ -245,6 +238,9 @@ static NSString *detailSegue = @"detailSegue";
         
         //course name
         course.name = specDict[@"name"];
+        
+        //course detail
+        course.detail = specDict[@"description"];
         
         //image url
         course.imageURL = specDict[@"logo"];
@@ -269,8 +265,40 @@ static NSString *detailSegue = @"detailSegue";
         });
     }
     
-    courseIDDict = nil;
-    partnerIDDict = nil;
+    //parse linked array to populate course objects, store in mutable courses array for table view data and reload
+    NSArray *coursesV1Array = linked[@"courses.v1"];
+    for (NSDictionary *courseDict in coursesV1Array) {
+        CPCourse *course = courseIDDict[courseDict[@"id"]];
+        
+        if (course == nil) {
+            continue;
+        }
+        
+        //course name
+        course.name = courseDict[@"name"];
+        
+        //course detail
+        course.detail = courseDict[@"description"];
+        
+        //image url
+        course.imageURL = courseDict[@"photoUrl"];
+        [self downloadImage:course.imageURL key:course.courseID];
+        
+        //uni name, handle multiple uni
+        NSArray *partnerArray = courseDict[@"partnerIds"];
+        for (NSString *partnerID in partnerArray) {
+            NSString *uniName = [partnerIDDict objectForKey:partnerID];
+            if (course.university.length > 0) {
+                course.university = [NSString stringWithFormat:@"%@, %@",course.university,uniName];
+            } else {
+                course.university = uniName;
+            }
+            
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }
 }
 
 - (void)downloadImage:(NSURL *)imageURL key:(NSString *)imageKey {
@@ -289,6 +317,7 @@ static NSString *detailSegue = @"detailSegue";
                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
                             if (image) {
                                 [[SDImageCache sharedImageCache] storeImage:image forKey:imageKey toDisk:NO];
+                                [[NSNotificationCenter defaultCenter] postNotificationName:kSearchTableDidDownloadImage object:nil];
                                 dispatch_async(dispatch_get_main_queue(), ^{
                                     [self.tableView reloadData];
                                 });

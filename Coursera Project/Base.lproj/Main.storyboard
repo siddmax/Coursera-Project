@@ -80,6 +80,7 @@
                                             <outlet property="nameLabel" destination="xOa-Bx-dlW" id="ZRD-7E-z2G"/>
                                             <outlet property="specCourseLabel" destination="ITo-Ja-mhw" id="DSz-DE-q46"/>
                                             <outlet property="uniLabel" destination="Bpk-y0-r1C" id="6pE-ZI-6l9"/>
+                                            <segue destination="Hek-5P-taL" kind="show" identifier="detailSegue" id="sYj-6L-9X7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -106,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1377" y="479"/>
         </scene>
-        <!--View Controller-->
+        <!--Course Detail View Controller-->
         <scene sceneID="uwG-Fv-eUP">
             <objects>
-                <viewController id="Hek-5P-taL" sceneMemberID="viewController">
+                <viewController id="Hek-5P-taL" customClass="CPCourseDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aKV-bu-pRM"/>
                         <viewControllerLayoutGuide type="bottom" id="RuV-PJ-yow"/>
@@ -117,8 +118,46 @@
                     <view key="view" contentMode="scaleToFill" id="X2f-I1-H57">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dul-Ct-oVG">
+                                <rect key="frame" x="18" y="85" width="565" height="127"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fx6-ph-EhT">
+                                <rect key="frame" x="105" y="220" width="391" height="189"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="189" id="eId-rf-67F"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vm1-IX-adH">
+                                <rect key="frame" x="0.0" y="417" width="580" height="175"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="vm1-IX-adH" secondAttribute="trailing" id="9nS-UB-36g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fx6-ph-EhT" secondAttribute="trailing" constant="84" id="Q6n-5e-QWM"/>
+                            <constraint firstItem="dul-Ct-oVG" firstAttribute="top" secondItem="aKV-bu-pRM" secondAttribute="bottom" constant="21" id="XgJ-4X-gq8"/>
+                            <constraint firstItem="Fx6-ph-EhT" firstAttribute="leading" secondItem="X2f-I1-H57" secondAttribute="leadingMargin" constant="85" id="apj-dW-DlM"/>
+                            <constraint firstItem="vm1-IX-adH" firstAttribute="leading" secondItem="X2f-I1-H57" secondAttribute="leadingMargin" constant="-20" id="bKA-2H-jcC"/>
+                            <constraint firstItem="RuV-PJ-yow" firstAttribute="top" secondItem="vm1-IX-adH" secondAttribute="bottom" constant="8" id="cqf-4R-YcJ"/>
+                            <constraint firstItem="Fx6-ph-EhT" firstAttribute="top" secondItem="dul-Ct-oVG" secondAttribute="bottom" constant="8" id="fUi-m8-vVb"/>
+                            <constraint firstItem="Fx6-ph-EhT" firstAttribute="top" secondItem="X2f-I1-H57" secondAttribute="top" constant="220" id="lXg-d0-3ll"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dul-Ct-oVG" secondAttribute="trailing" constant="-3" id="ox3-wD-MUT"/>
+                            <constraint firstItem="dul-Ct-oVG" firstAttribute="leading" secondItem="X2f-I1-H57" secondAttribute="leadingMargin" constant="-2" id="sZ2-wF-X7n"/>
+                            <constraint firstItem="vm1-IX-adH" firstAttribute="top" secondItem="Fx6-ph-EhT" secondAttribute="bottom" constant="8" id="uaZ-4c-U9X"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="courseDescription" destination="vm1-IX-adH" id="KxG-Nw-vU6"/>
+                        <outlet property="courseImage" destination="Fx6-ph-EhT" id="D7F-Sr-rZ5"/>
+                        <outlet property="courseTitle" destination="dul-Ct-oVG" id="asE-qk-ahD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNL-fb-EQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
