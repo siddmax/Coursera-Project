@@ -9,23 +9,36 @@
 /* Begin PBXBuildFile section */
 		42BAF2571D86286E00E8B8B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF2561D86286D00E8B8B2 /* main.m */; };
 		42BAF25A1D86286E00E8B8B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF2591D86286E00E8B8B2 /* AppDelegate.m */; };
-		42BAF25D1D86286E00E8B8B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF25C1D86286E00E8B8B2 /* ViewController.m */; };
+		42BAF25D1D86286E00E8B8B2 /* CPSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF25C1D86286E00E8B8B2 /* CPSearchViewController.m */; };
 		42BAF2601D86286E00E8B8B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BAF25E1D86286E00E8B8B2 /* Main.storyboard */; };
 		42BAF2621D86286E00E8B8B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BAF2611D86286E00E8B8B2 /* Assets.xcassets */; };
 		42BAF2651D86286E00E8B8B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BAF2631D86286E00E8B8B2 /* LaunchScreen.storyboard */; };
+		42BAF26E1D86343800E8B8B2 /* CPCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF26D1D86343800E8B8B2 /* CPCourse.m */; };
+		42BAF2711D86355600E8B8B2 /* CPSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF2701D86355600E8B8B2 /* CPSearchTableViewCell.m */; };
+		42BAF2741D86850D00E8B8B2 /* CPCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF2731D86850D00E8B8B2 /* CPCourseDetailViewController.m */; };
+		8878EE427BF9BA1913120462 /* libPods-Coursera Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A76E089C71F9DBA7E20DEF0 /* libPods-Coursera Project.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		296A6B132848E97945ED35DC /* Pods-Coursera Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coursera Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coursera Project/Pods-Coursera Project.debug.xcconfig"; sourceTree = "<group>"; };
 		42BAF2521D86286D00E8B8B2 /* Coursera Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coursera Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BAF2561D86286D00E8B8B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42BAF2581D86286E00E8B8B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42BAF2591D86286E00E8B8B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		42BAF25B1D86286E00E8B8B2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		42BAF25C1D86286E00E8B8B2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		42BAF25B1D86286E00E8B8B2 /* CPSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPSearchViewController.h; sourceTree = "<group>"; };
+		42BAF25C1D86286E00E8B8B2 /* CPSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPSearchViewController.m; sourceTree = "<group>"; };
 		42BAF25F1D86286E00E8B8B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42BAF2611D86286E00E8B8B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42BAF2641D86286E00E8B8B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42BAF2661D86286E00E8B8B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42BAF26C1D86343800E8B8B2 /* CPCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCourse.h; sourceTree = "<group>"; };
+		42BAF26D1D86343800E8B8B2 /* CPCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCourse.m; sourceTree = "<group>"; };
+		42BAF26F1D86355600E8B8B2 /* CPSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSearchTableViewCell.h; sourceTree = "<group>"; };
+		42BAF2701D86355600E8B8B2 /* CPSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSearchTableViewCell.m; sourceTree = "<group>"; };
+		42BAF2721D86850D00E8B8B2 /* CPCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCourseDetailViewController.h; sourceTree = "<group>"; };
+		42BAF2731D86850D00E8B8B2 /* CPCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCourseDetailViewController.m; sourceTree = "<group>"; };
+		8A76E089C71F9DBA7E20DEF0 /* libPods-Coursera Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coursera Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C19CE2F7BA8CDD6B1FC0F2 /* Pods-Coursera Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coursera Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coursera Project/Pods-Coursera Project.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +46,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8878EE427BF9BA1913120462 /* libPods-Coursera Project.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15E4F51C57E69966970BF47D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				296A6B132848E97945ED35DC /* Pods-Coursera Project.debug.xcconfig */,
+				E4C19CE2F7BA8CDD6B1FC0F2 /* Pods-Coursera Project.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		42BAF2491D86286D00E8B8B2 = {
 			isa = PBXGroup;
 			children = (
 				42BAF2541D86286D00E8B8B2 /* Coursera Project */,
 				42BAF2531D86286D00E8B8B2 /* Products */,
+				15E4F51C57E69966970BF47D /* Pods */,
+				9A40F5330B4CA1D6CAA5E26B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +85,14 @@
 			children = (
 				42BAF2581D86286E00E8B8B2 /* AppDelegate.h */,
 				42BAF2591D86286E00E8B8B2 /* AppDelegate.m */,
-				42BAF25B1D86286E00E8B8B2 /* ViewController.h */,
-				42BAF25C1D86286E00E8B8B2 /* ViewController.m */,
+				42BAF26C1D86343800E8B8B2 /* CPCourse.h */,
+				42BAF26D1D86343800E8B8B2 /* CPCourse.m */,
+				42BAF26F1D86355600E8B8B2 /* CPSearchTableViewCell.h */,
+				42BAF2701D86355600E8B8B2 /* CPSearchTableViewCell.m */,
+				42BAF25B1D86286E00E8B8B2 /* CPSearchViewController.h */,
+				42BAF25C1D86286E00E8B8B2 /* CPSearchViewController.m */,
+				42BAF2721D86850D00E8B8B2 /* CPCourseDetailViewController.h */,
+				42BAF2731D86850D00E8B8B2 /* CPCourseDetailViewController.m */,
 				42BAF25E1D86286E00E8B8B2 /* Main.storyboard */,
 				42BAF2611D86286E00E8B8B2 /* Assets.xcassets */,
 				42BAF2631D86286E00E8B8B2 /* LaunchScreen.storyboard */,
@@ -79,6 +110,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9A40F5330B4CA1D6CAA5E26B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A76E089C71F9DBA7E20DEF0 /* libPods-Coursera Project.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42BAF2691D86286E00E8B8B2 /* Build configuration list for PBXNativeTarget "Coursera Project" */;
 			buildPhases = (
+				304E222B9137A49EC5CF4FC6 /* [CP] Check Pods Manifest.lock */,
 				42BAF24E1D86286D00E8B8B2 /* Sources */,
 				42BAF24F1D86286D00E8B8B2 /* Frameworks */,
 				42BAF2501D86286D00E8B8B2 /* Resources */,
+				072205E6DA7C3A4010E1430F /* [CP] Embed Pods Frameworks */,
+				6901B2D6685106D56E392680 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,12 +186,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		072205E6DA7C3A4010E1430F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coursera Project/Pods-Coursera Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		304E222B9137A49EC5CF4FC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6901B2D6685106D56E392680 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coursera Project/Pods-Coursera Project-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42BAF24E1D86286D00E8B8B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42BAF25D1D86286E00E8B8B2 /* ViewController.m in Sources */,
+				42BAF25D1D86286E00E8B8B2 /* CPSearchViewController.m in Sources */,
+				42BAF2711D86355600E8B8B2 /* CPSearchTableViewCell.m in Sources */,
+				42BAF26E1D86343800E8B8B2 /* CPCourse.m in Sources */,
+				42BAF2741D86850D00E8B8B2 /* CPCourseDetailViewController.m in Sources */,
 				42BAF25A1D86286E00E8B8B2 /* AppDelegate.m in Sources */,
 				42BAF2571D86286E00E8B8B2 /* main.m in Sources */,
 			);
@@ -263,6 +356,7 @@
 		};
 		42BAF26A1D86286E00E8B8B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 296A6B132848E97945ED35DC /* Pods-Coursera Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Coursera Project/Info.plist";
@@ -274,6 +368,7 @@
 		};
 		42BAF26B1D86286E00E8B8B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4C19CE2F7BA8CDD6B1FC0F2 /* Pods-Coursera Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Coursera Project/Info.plist";
@@ -302,6 +397,7 @@
 				42BAF26B1D86286E00E8B8B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

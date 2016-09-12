@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CPCourseDetailViewController.h
 //  Coursera Project
 //
 //  Created by Siddharth Sharma on 9/11/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CPCourseDetailViewController : UIViewController
 
 @end
-
